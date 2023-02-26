@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "950229377498",
+    "firebase_url": "https://ecogram-bfd3e-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "ecogram-bfd3e",
+    "storage_bucket": "ecogram-bfd3e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:950229377498:android:ea0e16020c1fe946d8a0e3",
+        "android_client_info": {
+          "package_name": "com.example.ecogram"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "950229377498-hmedotfnn4u06136me7quenhmvg5f6pn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_Nmq8FP2l9wvrDXjxSSRBGtaGDEJ5rTs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "950229377498-hmedotfnn4u06136me7quenhmvg5f6pn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
