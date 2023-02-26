@@ -1,6 +1,8 @@
+import 'package:ecogram/components/RoundedPasswordField.dart';
 import 'package:ecogram/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import '../../../components/RoundedButton.dart';
 import '../components/background.dart';
 import '../../../components/RoundedInputField.dart';
 
@@ -26,7 +28,16 @@ class Body extends StatelessWidget {
             icon: Icons.person,
             hintText: "Your Email",
             onChanged: (value) {},
-          )
+          ),
+          RoundedPasswordField(
+            icon: Icons.password,
+            hintText: "Password",
+            onChanged: (value) {},
+          ),
+          RoundedButton(
+            text: "LOGIN",
+            press: () => {},
+          ),
         ]));
   }
 }
