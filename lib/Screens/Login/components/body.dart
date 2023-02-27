@@ -1,8 +1,10 @@
+import 'package:ecogram/Screens/Signup/signup_screen.dart';
 import 'package:ecogram/components/RoundedPasswordField.dart';
 import 'package:ecogram/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import '../../../components/AlreadyHaveAnAccountCheck.dart';
 import '../../../components/RoundedButton.dart';
 import '../components/background.dart';
 import '../../../components/RoundedInputField.dart';
@@ -31,7 +33,6 @@ class _BodyState extends State<Body> {
       await Auth().signInWithEmailAndPassword(
           email: _controllerEmail.text, password: _controllerPassword.text);
     } on FirebaseAuthException catch (e) {
-      debugPrint('Catch');
       setState(() {
         errorMessage = e.message;
       });
@@ -50,8 +51,10 @@ class _BodyState extends State<Body> {
             "LOGIN",
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
+          SizedBox(height: size.height * 0.03),
           SvgPicture.asset("assets/icons/login.svg",
               height: size.height * 0.35),
+          SizedBox(height: size.height * 0.03),
           RoundedInputField(
             icon: Icons.person,
             hintText: "Your Email",
@@ -67,6 +70,8 @@ class _BodyState extends State<Body> {
             },
           ),
           RoundedButton(text: 'Login', press: signInWithEmailAndPassword),
+          SizedBox(height: size.height * 0.03),
+          const AlreadyHaveAnAccountCheck()
         ]));
   }
 }
