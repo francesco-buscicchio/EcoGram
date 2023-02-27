@@ -1,3 +1,4 @@
+import 'package:ecogram/Screens/Login/components/homepage.dart';
 import 'package:ecogram/Screens/Welcome/welcome_screen.dart';
 import 'package:ecogram/constants.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       title: 'EcoGram',
       theme: ThemeData(
           primaryColor: kPrimaryColor, scaffoldBackgroundColor: Colors.white),
-      home: const WidgetTree(),
+      home: WelcomeScreen(),
     );
   }
 }
