@@ -1,34 +1,56 @@
-import 'package:flutter/material.dart';
-import 'TextFielContainer.dart';
 import 'package:ecogram/constants.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/container.dart';
+import 'package:flutter/src/widgets/framework.dart';
 
-class RoundedPasswordField extends StatelessWidget {
+import 'TextFielContainer.dart';
+
+class RoundedPasswordField extends StatefulWidget {
   final String hintText;
   final IconData icon;
   final ValueChanged<String> onChanged;
+  bool obscureTextBool = true;
 
-  const RoundedPasswordField({
+  RoundedPasswordField({
     Key? key,
+    obscureTextBool = true,
     required this.hintText,
     this.icon = Icons.person,
     required this.onChanged,
   }) : super(key: key);
 
   @override
+  State<RoundedPasswordField> createState() => _RoundedPasswordFieldState();
+}
+
+class _RoundedPasswordFieldState extends State<RoundedPasswordField> {
+  @override
   Widget build(BuildContext context) {
     return TextFieldContainer(
       child: TextField(
-        onChanged: onChanged,
-        obscureText: true,
-        enableSuggestions: false,
-        autocorrect: false,
-        decoration: InputDecoration(
-            icon: Icon(
-              icon,
-              color: kPrimaryColor,
-            ),
-            hintText: hintText),
-      ),
+          onChanged: widget.onChanged,
+          enableSuggestions: false,
+          autocorrect: false,
+          decoration: InputDecoration(
+              icon: Icon(
+                widget.icon,
+                color: kPrimaryColor,
+              ),
+              hintText: widget.hintText,
+              suffixIcon: GestureDetector(
+                onTap: () {
+                  setState(() {
+                    widget.obscureTextBool = !widget.obscureTextBool;
+                  });
+                },
+                child: Icon(
+                    widget.obscureTextBool
+                        ? Icons.visibility
+                        : Icons.visibility_off,
+                    color: kPrimaryColor),
+              )),
+          obscureText: widget.obscureTextBool),
     );
   }
 }
