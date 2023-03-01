@@ -1,3 +1,4 @@
+import 'package:ecogram/Screens/Signup/signup_screen.dart';
 import 'package:ecogram/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:ecogram/Screens/Welcome/components/background.dart';
@@ -31,7 +32,11 @@ class Body extends StatelessWidget {
                 }),
             RoundedButton(
               text: "SIGNUP",
-              press: () {},
+              press: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return const SingUpScreen();
+                }));
+              },
               color: kPrimaryLightColor,
               textColor: Colors.black,
             )
