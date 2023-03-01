@@ -21,7 +21,6 @@ class AlreadyHaveAnAccountCheck extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
-            debugPrint("Pressed");
             login
                 ? Navigator.push(context, MaterialPageRoute(builder: (context) {
                     return const SingUpScreen();

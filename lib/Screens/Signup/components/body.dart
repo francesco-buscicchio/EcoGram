@@ -1,15 +1,40 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import '../../../Tools/auth.dart';
 import '../../../components/AlreadyHaveAnAccountCheck.dart';
 import '../../../components/RoundedButton.dart';
 import '../../../components/RoundedInputField.dart';
 import '../../../components/RoundedPasswordField.dart';
 import '../../Signup/components/background.dart';
 
-class Body extends StatelessWidget {
-  final Widget child;
-  const Body({Key? key, required this.child}) : super(key: key);
+class Body extends StatefulWidget {
+  const Body({super.key});
+
+  @override
+  State<Body> createState() => _BodyState();
+}
+
+class _BodyState extends State<Body> {
+  String? errorMessage = '';
+  final TextEditingController _controllerEmail = TextEditingController();
+  final TextEditingController _controllerPassword = TextEditingController();
+
+  Widget _errorMessage() {
+    return Text(errorMessage == '' ? '' : 'Humm? $errorMessage');
+  }
+
+  Future<void> createUserWithEmailAndPassword() async {
+    try {
+      await Auth().createUserWithEmailAndPassword(
+          email: _controllerEmail.text, password: _controllerPassword.text);
+    } on FirebaseAuthException catch (e) {
+      setState(() {
+        errorMessage = e.message;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +44,7 @@ class Body extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         // ignore: prefer_const_literals_to_create_immutables
         children: <Widget>[
+          _errorMessage(),
           const Text("SIGNUP", style: TextStyle(fontWeight: FontWeight.bold)),
           SizedBox(height: size.height * 0.03),
           SvgPicture.asset("assets/icons/signup.svg",
@@ -27,16 +53,20 @@ class Body extends StatelessWidget {
           RoundedInputField(
             icon: Icons.person,
             hintText: "Your Email",
-            onChanged: (value) {},
+            onChanged: (value) {
+              _controllerEmail.text = value;
+            },
           ),
           RoundedPasswordField(
             icon: Icons.password,
             hintText: "Password",
-            onChanged: (value) {},
+            onChanged: (value) {
+              _controllerPassword.text = value;
+            },
           ),
           RoundedButton(
             text: 'SIGNUP',
-            press: () {},
+            press: createUserWithEmailAndPassword,
           ),
           SizedBox(height: size.height * 0.03),
           const AlreadyHaveAnAccountCheck(
