@@ -1,9 +1,10 @@
-import 'package:ecogram/Screens/Login/components/homepage.dart';
-import 'package:ecogram/Screens/Welcome/welcome_screen.dart';
+import 'package:ecogram/Screens/Login/login_screen.dart';
 import 'package:ecogram/constants.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
+import 'package:ecogram/Screens/Homepage/homepage.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,7 +25,26 @@ class MyApp extends StatelessWidget {
       title: 'EcoGram',
       theme: ThemeData(
           primaryColor: kPrimaryColor, scaffoldBackgroundColor: Colors.white),
-      home: WelcomeScreen(),
+      home: StreamBuilder(
+        stream: FirebaseAuth.instance.authStateChanges(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.active) {
+            if (snapshot.hasData) {
+              return const Homepage();
+            } else if (snapshot.hasError) {
+              return Center(child: Text(snapshot.error.toString()));
+            }
+          }
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(
+                child: CircularProgressIndicator(
+              color: kPrimaryColor,
+            ));
+          }
+
+          return const LoginScreen();
+        },
+      ),
     );
   }
 }

@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 
 import '../../../Tools/auth.dart';
 
-class HomePage extends StatelessWidget {
-  HomePage({Key? key}) : super(key: key);
+class HomePageIgnora extends StatelessWidget {
+  HomePageIgnora({Key? key}) : super(key: key);
 
   final User? user = Auth().currentUser;
 

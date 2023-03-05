@@ -1,6 +1,5 @@
 import 'package:ecogram/Screens/Login/login_screen.dart';
 import 'package:ecogram/constants.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../Screens/Signup/signup_screen.dart';

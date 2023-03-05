@@ -1,3 +1,4 @@
+import 'package:ecogram/Screens/Homepage/homepage.dart';
 import 'package:ecogram/Screens/Signup/signup_screen.dart';
 import 'package:ecogram/components/RoundedPasswordField.dart';
 import 'package:ecogram/constants.dart';
@@ -9,6 +10,7 @@ import '../../../components/RoundedButton.dart';
 import '../components/background.dart';
 import '../../../components/RoundedInputField.dart';
 import '../../../Tools/auth.dart';
+import 'homepage.dart';
 
 class Body extends StatefulWidget {
   const Body({super.key});
@@ -32,6 +34,8 @@ class _BodyState extends State<Body> {
     try {
       await Auth().signInWithEmailAndPassword(
           email: _controllerEmail.text, password: _controllerPassword.text);
+      Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => const Homepage()));
     } on FirebaseAuthException catch (e) {
       setState(() {
         errorMessage = e.message;
