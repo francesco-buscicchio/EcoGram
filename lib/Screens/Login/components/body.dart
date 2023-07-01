@@ -1,5 +1,6 @@
 import 'package:ecogram/Screens/Homepage/homepage.dart';
 import 'package:ecogram/Screens/Signup/signup_screen.dart';
+import 'package:ecogram/Screens/activity_feed.dart';
 import 'package:ecogram/components/RoundedPasswordField.dart';
 import 'package:ecogram/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -35,7 +36,7 @@ class _BodyState extends State<Body> {
       await Auth().signInWithEmailAndPassword(
           email: _controllerEmail.text, password: _controllerPassword.text);
       Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => const Homepage()));
+          MaterialPageRoute(builder: (context) =>  ActivityFeed()));
     } on FirebaseAuthException catch (e) {
       setState(() {
         errorMessage = e.message;
