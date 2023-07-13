@@ -36,7 +36,7 @@ class _BodyState extends State<Body> {
       await Auth().signInWithEmailAndPassword(
           email: _controllerEmail.text, password: _controllerPassword.text);
       Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) =>  ActivityFeed()));
+          MaterialPageRoute(builder: (context) =>  HomePage()));
     } on FirebaseAuthException catch (e) {
       setState(() {
         errorMessage = e.message;
