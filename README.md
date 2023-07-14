@@ -48,7 +48,7 @@ Firebase: A backend platform that provides various services like authentication,
 
 ## Current Issues <a name="issues"></a>
 
-[Click here]([https://github.com/mathkruger/litefy/issues](https://github.com/francesco-buscicchio/EcoGram/issues)) to see Ecogram's issues that need fixing.
+[Click here]([https://github.com/francesco-buscicchio/EcoGram/issues]) to see Ecogram's issues that need fixing.
 
 ## License <a name="license"></a>
 <p>EcoGram is licensed under the <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a>.</p>
