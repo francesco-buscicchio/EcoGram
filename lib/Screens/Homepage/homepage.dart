@@ -26,7 +26,6 @@ class _HomePageState extends State<HomePage> {
 @override
 Widget build(BuildContext context) => Scaffold(
   body: screens[index],
-  appBar: AppBar(centerTitle: true, title: const Text(""), backgroundColor: kPrimaryLightColor,),
   bottomNavigationBar: NavigationBarTheme(
     data: const NavigationBarThemeData(
       indicatorColor: kPrimaryColor,
