@@ -27,8 +27,22 @@ class _BodyState extends State<Body> {
 
   Future<void> createUserWithEmailAndPassword() async {
     try {
-      await Auth().createUserWithEmailAndPassword(
-          email: _controllerEmail.text, password: _controllerPassword.text);
+      await Auth()
+          .createUserWithEmailAndPassword(
+              email: _controllerEmail.text, password: _controllerPassword.text)
+          .then((newUser) => {
+                Auth().createCollection(collectionName: 'users', data: {
+                  "id": newUser.user!.uid,
+                  "createAt": DateTime.now(),
+                  "email": _controllerEmail.text,
+                  "name": "",
+                  "phonenumber": "",
+                  "surname": "",
+                  "userImage": "",
+                  "username": _controllerEmail.text
+                      .substring(0, _controllerEmail.text.indexOf('@'))
+                })
+              });
     } on FirebaseAuthException catch (e) {
       setState(() {
         errorMessage = e.message;
