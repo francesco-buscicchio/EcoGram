@@ -39,6 +39,7 @@ dependencies:
   flutter_svg: ^0.20.0-nullsafety.3
   firebase_auth: ^4.2.9
   firebase_core: '^2.7.0'
+  cloud_firestore: ^4.8.3
 
 dev_dependencies:
   flutter_test:

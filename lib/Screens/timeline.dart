@@ -6,7 +6,15 @@ class Timelines extends StatefulWidget {
   @override
   _TimelinesState createState() => _TimelinesState();
 }
-final List people = ['francesco.buscicchio','mario.gervario','roberta.ribezzo','marisa.resta','maggy.angeli','maria.preteso'];
+
+final List people = [
+  'francesco.buscicchio',
+  'mario.gervario',
+  'roberta.ribezzo',
+  'marisa.resta',
+  'maggy.angeli',
+  'maria.preteso'
+];
 
 class _TimelinesState extends State<Timelines> {
   @override
@@ -51,7 +59,12 @@ class Timeline extends StatelessWidget {
         children: [
           Container(
             height: 130,
-            child: ListView.builder(scrollDirection: Axis.horizontal,itemCount: people.length,itemBuilder: (context, index) { return BubbleStories(text: people[index]);}),
+            child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: people.length,
+                itemBuilder: (context, index) {
+                  return BubbleStories(text: people[index]);
+                }),
           )
         ],
       ),
