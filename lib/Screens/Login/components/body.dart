@@ -1,8 +1,5 @@
 import 'package:ecogram/Screens/Homepage/homepage.dart';
-import 'package:ecogram/Screens/Signup/signup_screen.dart';
-import 'package:ecogram/Screens/activity_feed.dart';
 import 'package:ecogram/components/RoundedPasswordField.dart';
-import 'package:ecogram/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -11,7 +8,6 @@ import '../../../components/RoundedButton.dart';
 import '../components/background.dart';
 import '../../../components/RoundedInputField.dart';
 import '../../../Tools/auth.dart';
-import 'homepage.dart';
 
 class Body extends StatefulWidget {
   const Body({super.key});

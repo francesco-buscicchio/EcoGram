@@ -1,11 +1,9 @@
 import 'package:ecogram/constants.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 import 'TextFielContainer.dart';
 
+// ignore: must_be_immutable
 class RoundedPasswordField extends StatefulWidget {
   final String hintText;
   final IconData icon;
