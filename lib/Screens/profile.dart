@@ -1,3 +1,4 @@
+import 'package:ecogram/components/backgrounds/ProfileBackground.dart';
 import 'package:flutter/material.dart';
 
 
@@ -17,6 +18,6 @@ return const Text('Profiles');
 class Profile extends StatelessWidget {
 @override
 Widget build(BuildContext context) {
-    return const Text('Profiles');
+    return const ProfileBackground(child: Scaffold(backgroundColor: Colors.transparent,));
 }
 }
