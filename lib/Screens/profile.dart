@@ -62,7 +62,7 @@ class Profile extends StatelessWidget {
             Text("@francesco_buscicchio",
                 style: Theme.of(context).textTheme.bodyLarge),
                 const SizedBox(height: 80),
-                const Row(children: [
+                Row(children: const [
                   Text("Posts"),
                   Text("30")
                 ],)
