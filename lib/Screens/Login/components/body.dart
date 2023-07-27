@@ -1,4 +1,5 @@
 import 'package:ecogram/Screens/Homepage/homepage.dart';
+import 'package:ecogram/components/PasswordForgotten.dart';
 import 'package:ecogram/components/RoundedPasswordField.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -72,7 +73,9 @@ class _BodyState extends State<Body> {
           ),
           RoundedButton(text: 'Login', press: signInWithEmailAndPassword),
           SizedBox(height: size.height * 0.03),
-          const AlreadyHaveAnAccountCheck()
+          const AlreadyHaveAnAccountCheck(),
+          SizedBox(height: size.height * 0.015),
+          const PasswordForgotten()
         ]));
   }
 }
