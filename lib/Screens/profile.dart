@@ -43,7 +43,7 @@ class Profile extends StatelessWidget {
                 ClipPath(
                   clipper: ProfileImageClipper(),
                   child: Image.asset(
-                    "../assets/images/user_default.png",
+                    "assets/images/user_default.png",
                     width: 180,
                     height: 180,
                     fit: BoxFit.cover,
