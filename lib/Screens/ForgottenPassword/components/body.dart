@@ -1,3 +1,4 @@
+import 'package:ecogram/components/messages/successMessage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -20,7 +21,15 @@ class _BodyState extends State<Body> {
 
   Future<void> passwordReset() async {
     try {
-      await Auth().passwordReset(email: _controllerEmail.text);
+      await Auth().passwordReset(email: _controllerEmail.text).then((value) => {
+            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+              content: SuccessMessage(
+                  message: "Password recovery request has been submitted!"),
+              behavior: SnackBarBehavior.floating,
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+            ))
+          });
     } on FirebaseAuthException catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: ErrorMessage(error: e),
@@ -65,4 +74,3 @@ class _BodyState extends State<Body> {
     );
   }
 }
-
