@@ -54,7 +54,7 @@ class ErrorMessage extends StatelessWidget {
                 borderRadius: const BorderRadius.only(
                     bottomLeft: Radius.circular(20)),
                 child: SvgPicture.asset(
-                  "../assets/icons/bubbles.svg",
+                  "assets/icons/bubbles.svg",
                   height: 48,
                   width: 40,
                   color: const Color(0xFF801336),
@@ -66,14 +66,14 @@ class ErrorMessage extends StatelessWidget {
               alignment: Alignment.center,
               children: [
                 SvgPicture.asset(
-                  "../assets/icons/fail.svg",
+                  "assets/icons/fail.svg",
                   height: 40,
                 ),
                 Positioned(
                   top: 10,
 
                   child: SvgPicture.asset(
-                    "../assets/icons/close.svg",
+                    "assets/icons/close.svg",
                     height: 16,
                   ),
                 )

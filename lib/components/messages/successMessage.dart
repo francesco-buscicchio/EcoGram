@@ -53,7 +53,7 @@ class SuccessMessage extends StatelessWidget {
                 borderRadius: const BorderRadius.only(
                     bottomLeft: Radius.circular(20)),
                 child: SvgPicture.asset(
-                  "../assets/icons/bubbles_green.svg",
+                  "assets/icons/bubbles_green.svg",
                   height: 48,
                   width: 40,
                   color: const Color(0xFF08C208),
@@ -65,14 +65,14 @@ class SuccessMessage extends StatelessWidget {
               alignment: Alignment.center,
               children: [
                 SvgPicture.asset(
-                  "../assets/icons/success.svg",
+                  "assets/icons/success.svg",
                   height: 40,
                 ),
                 Positioned(
                   top: 10,
 
                   child: SvgPicture.asset(
-                    "../assets/icons/close.svg",
+                    "assets/icons/close.svg",
                     height: 16,
                   ),
                 )
