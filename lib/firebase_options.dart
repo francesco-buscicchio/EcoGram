@@ -2,19 +2,12 @@
 // ignore_for_file: lines_longer_than_80_chars, avoid_classes_with_only_static_members
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
-    show defaultTargetPlatform, kIsWeb, TargetPlatform;
+show defaultTargetPlatform, kIsWeb, TargetPlatform;
+import '../constants.dart';
 
-/// Default [FirebaseOptions] for use with your Firebase apps.
-///
-/// Example:
-/// ```dart
-/// import 'firebase_options.dart';
-/// // ...
-/// await Firebase.initializeApp(
-///   options: DefaultFirebaseOptions.currentPlatform,
-/// );
-/// ```
 class DefaultFirebaseOptions {
+
+
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
       return web;
@@ -43,8 +36,8 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDpBbH9MNELpL-DZCtrkIcrU8MSGB7G10k',
+  static FirebaseOptions web = FirebaseOptions(
+    apiKey: kApiKey,
     appId: '1:950229377498:web:ef0dfc6a875f3b3bd8a0e3',
     messagingSenderId: '950229377498',
     projectId: 'ecogram-bfd3e',
@@ -54,8 +47,8 @@ class DefaultFirebaseOptions {
     measurementId: 'G-8XTZDFJZEM',
   );
 
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyB_Nmq8FP2l9wvrDXjxSSRBGtaGDEJ5rTs',
+  static FirebaseOptions android = FirebaseOptions(
+    apiKey: kApiKey,
     appId: '1:950229377498:android:ea0e16020c1fe946d8a0e3',
     messagingSenderId: '950229377498',
     projectId: 'ecogram-bfd3e',
@@ -63,8 +56,8 @@ class DefaultFirebaseOptions {
     storageBucket: 'ecogram-bfd3e.appspot.com',
   );
 
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCb-RX2_5JhIgFJ_D4NGJY240nz-xHO4Zs',
+  static FirebaseOptions ios = FirebaseOptions(
+    apiKey: kApiKey,
     appId: '1:950229377498:ios:3d8f4bbad154d7d6d8a0e3',
     messagingSenderId: '950229377498',
     projectId: 'ecogram-bfd3e',
@@ -74,8 +67,8 @@ class DefaultFirebaseOptions {
     iosBundleId: 'com.example.ecogram',
   );
 
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCb-RX2_5JhIgFJ_D4NGJY240nz-xHO4Zs',
+  static FirebaseOptions macos = FirebaseOptions(
+    apiKey: kApiKey,
     appId: '1:950229377498:ios:3d8f4bbad154d7d6d8a0e3',
     messagingSenderId: '950229377498',
     projectId: 'ecogram-bfd3e',
